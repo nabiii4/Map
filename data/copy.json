@@ -2,6 +2,7 @@
  "_note": "Site text. Editors can change any of these in Admin > Site text without touching code. {n} and {name} are filled in automatically.",
  "site.name": "Nightmare Delegate",
  "site.tagline": "Draw your nightmare. Debate it. Then go find a human.",
+ "site.code_repo_url": "https://github.com/nabiii4/Model-UN",
  "welcome.headline": "The first thing you get is a blank sheet.",
  "welcome.subtext": "Draw the debate opponent that scares you most. We'll bring it to life. You practice one round. Then you go find a human.",
  "welcome.under_doors": "All three are the right choice.",

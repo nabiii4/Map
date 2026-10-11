@@ -4,13 +4,15 @@
 
 A practice website for a high school Model UN club. Members draw their "nightmare delegate," snap a photo, and AI turns the drawing into a practice opponent with a personality and a debate style. They practice one round. Then the screen says: **"Now go find a human."**
 
-The full build spec is in [`BUILD_PROMPT.md`](BUILD_PROMPT.md). **Phase 0 and Phase 1 are built.** Phases 2 and 3 are next (see "What's built" below).
+The code lives at **https://github.com/nabiii4/Model-UN**. The full build spec is in [`BUILD_PROMPT.md`](BUILD_PROMPT.md). **Phase 0 and Phase 1 are built.** Phases 2 and 3 are next (see "What's built" below).
 
 ## Quick start (about 2 minutes)
 
-You need Python 3.11 or newer (3.11–3.14 tested on Windows, Mac, and Linux).
+You need Python 3.11 or newer (3.11–3.14 tested on Windows, Mac, and Linux) and git.
 
 ```bash
+git clone https://github.com/nabiii4/Model-UN.git
+cd Model-UN
 python -m venv .venv
 # Windows:   .venv\Scripts\activate
 # Mac/Linux: source .venv/bin/activate
@@ -18,7 +20,7 @@ pip install -r requirements.txt
 python app.py
 ```
 
-Open **http://localhost:5000**. That's it — no API key needed.
+Open **http://localhost:5000**. That's it — no API key needed. (If port 5000 is busy — on a Mac, AirPlay Receiver uses it — the app picks the next free port and prints the address to open.)
 
 - It starts in **demo mode** (a yellow ribbon says "Demo mode — the AI is pretend"). Pretend AI answers look real, so you can try everything for free.
 - **Club code to join:** `blanksheet` (only while you haven't set `CLUB_CODE`).
@@ -52,7 +54,7 @@ Keys live **only** in `.env` (which git ignores). They are never sent to the bro
 ## Tests
 
 ```bash
-pytest                       # 63 tests, always in demo mode, ~20 seconds
+pytest                       # 68 tests, always in demo mode, ~20 seconds
 ```
 
 Real-browser tests (Chromium at Chromebook size 1366×768) are optional:
@@ -60,7 +62,7 @@ Real-browser tests (Chromium at Chromebook size 1366×768) are optional:
 ```bash
 pip install -r requirements-dev.txt
 python -m playwright install chromium
-pytest                       # now 69 tests, including tests/e2e
+pytest                       # now 75 tests, including tests/e2e
 ```
 
 Before committing, `python scripts/check_secrets.py` scans for anything that looks like a key.
